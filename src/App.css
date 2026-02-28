@@ -31,7 +31,7 @@ div[class*="Section"]::after {
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    
+
     --transition-fast: 0.15s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
@@ -108,6 +108,7 @@ header {
 
 .nav-bar a:hover {
     text-decoration: underline;
+    text-underline-offset: 6px;
 }
 
 .menu-toggle {
@@ -220,7 +221,7 @@ header {
     border: 1px solid var(--accent-color);
     border-radius: 25px;
     background-color: transparent;
-    font-weight: 500;
+    font-weight: 600;
     gap: 0.5rem;
     color: var(--accent-color);
 }
@@ -545,14 +546,16 @@ header {
     left: 0;
     width: 4px;
     height: 100%;
-    background: var(--accent-color);
+    /* background: var(--accent-color); */
     transform: scaleY(0);
     transition: transform 0.3s ease;
 }
 
+/* 
 .construction-card:hover::before {
     transform: scaleY(1);
-}
+} 
+*/
 
 .card-number {
     font-size: var(--fs-36);

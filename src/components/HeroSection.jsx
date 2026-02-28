@@ -1,4 +1,5 @@
 import '../App.css'
+// import { FaLongArrowAltRight } from "react-icons/fa";
 
 const HeroSection = () => {
 
@@ -6,8 +7,8 @@ const HeroSection = () => {
         const vision = document.getElementById("vision");
         vision.scrollIntoView({
             behavior: "smooth"
-        })
-    }
+        });
+    };
 
     return (
         <section className="heroSection">
@@ -23,9 +24,16 @@ const HeroSection = () => {
                     projects. Our team of skilled professionals is committed to delivering excellence, ensuring every project meets the
                     highest standards of safety, quality, and sustainability.
                 </p>
-                <button className="hero-btn animate-fade-in-delay-2" onClick={handleClick}>
+                <button
+                    className="hero-btn animate-fade-in-delay-2"
+                    onClick={handleClick}
+                    style={{ display: "flex", alignItems: "center" }}
+                >
                     Get Started
-                    <span className="btn-arrow">→</span>
+                    <span className="btn-arrow">
+                        →
+                        {/* <FaLongArrowAltRight /> */}
+                    </span>
                 </button>
             </div>
             <div className="hero-img">
