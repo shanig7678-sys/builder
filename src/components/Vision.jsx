@@ -1,6 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Vision = () => {
+
+    const [visionForm, setVisionForm] = useState({
+        fname: "",
+        email: "",
+        phone: "",
+        projectdetail: ""
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setVisionForm({
+            ...visionForm,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const { fname, email, phone, projectdetail } = visionForm;
+
+        if (!fname || !email || !phone || !projectdetail) {
+            console.log("All fields are required");
+            return;
+        }
+
+        console.log("Form Submitted:", visionForm);
+
+        // Reset form
+        setVisionForm({
+            fname: "",
+            email: "",
+            phone: "",
+            projectdetail: ""
+        });
+    };
+
     return (
         <section className='visionSection' id='vision'>
             <div className="vision-main-content">
@@ -14,40 +52,48 @@ const Vision = () => {
                 </p>
             </div>
             <div className="vision-form-container">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="vision-from-group">
-                        <label htmlFor="fullName">Full Name *</label>
+                        <label htmlFor="fName">Full Name</label>
                         <input
                             type="text"
-                            id="fullName"
-                            name="fullName"
+                            id="fname"
+                            name="fname"
                             placeholder='Enter your full name'
+                            value={visionForm.fname}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="vision-from-group">
-                        <label htmlFor="email">Email *</label>
+                        <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             placeholder='your.email@example.com'
+                            value={visionForm.email}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="vision-from-group">
-                        <label htmlFor="phone">Phone Number *</label>
+                        <label htmlFor="phone">Phone Number</label>
                         <input
                             type="tel"
                             id="phone"
                             name="phone"
                             placeholder='Enter your phone number'
+                            value={visionForm.phone}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="vision-from-group">
-                        <label htmlFor="projectDetail">Project Detail *</label>
+                        <label htmlFor="projectdetail">Project Detail</label>
                         <textarea
-                            id="projectDetail"
-                            name="projectDetail"
+                            id="projectdetail"
+                            name="projectdetail"
                             placeholder='Describe your project (e.g., type of construction, project size, timeline)'
+                            value={visionForm.projectdetail}
+                            onChange={handleChange}
                         ></textarea>
                     </div>
                     <input
