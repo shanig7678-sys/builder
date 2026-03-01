@@ -24,8 +24,7 @@ const Vision = () => {
         const { fname, email, phone, projectdetail } = visionForm;
 
         if (!fname || !email || !phone || !projectdetail) {
-            console.log("All fields are required");
-            return;
+            alert("All fields are required");
         }
 
         console.log("Form Submitted:", visionForm);
