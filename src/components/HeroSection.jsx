@@ -20,9 +20,7 @@ const HeroSection = () => {
                 </h1>
                 <p className="hero-description animate-fade-in-delay">
                     At M.B.M Builders, we specialize in building the infrastructure that shapes communities. With over 20 years of
-                    experience, we are dedicated to providing high-quality construction services for both residential and commercial
-                    projects. Our team of skilled professionals is committed to delivering excellence, ensuring every project meets the
-                    highest standards of safety, quality, and sustainability.
+                    experience, we are dedicated to providing high-quality construction services for both residential and commercial projects. Our team of skilled professionals is committed to delivering excellence, ensuring every project meets the highest standards of safety, quality, and sustainability.
                 </p>
                 <button
                     className="hero-btn animate-fade-in-delay-2"
