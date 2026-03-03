@@ -2,6 +2,14 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 
 export const Footer = () => {
+
+    const handleTopClick = () => {
+        scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -23,10 +31,10 @@ export const Footer = () => {
                     <div className="footer-section footer-links">
                         <h4 className="footer-heading">Quick Links</h4>
                         <ul className="footer-nav">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About Us</Link></li>
-                            <li><Link to="/service">Services</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/" onClick={handleTopClick}>Home</Link></li>
+                            <li><Link to="/about" onClick={handleTopClick}>About Us</Link></li>
+                            <li><Link to="/service" onClick={handleTopClick}>Services</Link></li>
+                            <li><Link to="/contact" onClick={handleTopClick}>Contact</Link></li>
                         </ul>
                     </div>
                 </div>
